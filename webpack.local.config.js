@@ -14,7 +14,7 @@ config.devtool = 'cheap-module-eval-source-map'
 config.devServer = {
   contentBase: path.join(__dirname, './dist'),
   historyApiFallback: true,
-  port: 8081,
+  port: 8082,
   inline: true
 }
 
