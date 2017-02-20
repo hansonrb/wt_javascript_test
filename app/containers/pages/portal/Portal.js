@@ -10,7 +10,7 @@ export const mapStateToProps = (state: Object): Object => ({
 })
 
 export const mapDispatchToProps = (dispatch: Function): Object => ({
-  getProject: () => dispatch(createAction(SAGA_GET_PROJECT)())
+  getProject: (id: number) => dispatch(createAction(SAGA_GET_PROJECT)({id}))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Portal)

@@ -14,11 +14,7 @@ const Authorizer = React.createClass({
   componentDidUpdate() { this.authorize() },
 
   authorize() {
-    const { Component } = this.props
-
-    if (!this.isAuthorized()) {
-      browserHistory.push('/not_authorized')
-    }
+    if (!this.isAuthorized()) browserHistory.push('/not_authorized')
   },
 
   isAuthorized() {

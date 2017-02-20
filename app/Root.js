@@ -1,7 +1,7 @@
 //@flow
 import React from 'react'
 import { render } from 'react-dom'
-import { browserHistory, Router, Route, IndexRoute } from 'react-router'
+import { browserHistory, Router, Route } from 'react-router'
 import { Provider } from 'react-redux'
 
 import Portal from '~/app/containers/pages/portal/Portal'
@@ -15,7 +15,7 @@ render((
     <div style={{height: '100%'}}>
       <Router history={browserHistory}>
         <Route path='/' component={Layout}>
-          <IndexRoute component={authorize(Portal)} />
+          <Router path='portals/:id' component={authorize(Portal)} />
         </Route>
         <Route path='/not_authorized' component={() => <h1>Not Authorized</h1>} />
       </Router>

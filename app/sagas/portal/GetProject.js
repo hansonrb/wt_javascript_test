@@ -5,9 +5,9 @@ import { createAction } from 'redux-actions'
 import { normalize } from 'normalizr'
 import { project as schema } from '~/app/NormalizrSchemas'
 
-function* perform() {
+function* perform(a) {
   try {
-    let project = yield api.getProject(127)
+    let project = yield api.getProject(a.payload.id)
     project.documents = project.documents.filter((d) => d.document_type === 'Policy' || d.carrier.name === 'Standard')
     project = normalize(project, schema)
     yield put(createAction(SET_PROJECT)({project}))
@@ -15,7 +15,7 @@ function* perform() {
 }
 
 function* watch() {
-  yield* takeEvery(SAGA_GET_PROJECT, perform)
+  yield takeEvery(SAGA_GET_PROJECT, perform)
 }
 
 export default watch
