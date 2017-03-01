@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 
 import Portal from '~/app/containers/pages/portal/Portal'
 import Layout from '~/app/containers/pages/layout/Layout'
+import Greeting from '~/app/containers/pages/greeting/Greeting'
 import store from '~/app/Store'
 import authorize from '~/app/containers/pages/auth/Authorizer'
 import './assets/styles/global.css'
@@ -17,6 +18,7 @@ render((
         <Route path='/' component={Layout}>
           <Router path='portals/:id' component={authorize(Portal)} />
         </Route>
+        <Route path='/greeting' component={Greeting} />
         <Route path='/not_authorized' component={() => <h1>Not Authorized</h1>} />
       </Router>
     </div>
