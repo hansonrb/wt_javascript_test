@@ -1,8 +1,8 @@
 //@flow
 import React, { PropTypes as pt } from 'react'
-import { GreetingHeader } from '~/app/components/shared/atoms'
+import { Header } from '~/app/components/shared/atoms'
 import { ActionButton } from '~/app/components/shared/molecules'
-import { TopContainer, BottomContainer } from './GreetingStyle'
+import { Container, SubContainer } from './GreetingStyle'
 
 const Greeting = React.createClass({
   propTypes: {
@@ -23,18 +23,27 @@ const Greeting = React.createClass({
 
     console.log(project)
 
-    return <TopContainer>
-      <GreetingHeader
-        greeting='Good morning!'
-        text="You've been directed here to act on an RFP for Durham School Service.
-              3 out of 6 carriers have submitted bids." />
+    return <Container>
+      <SubContainer width={'100%'} minHeight={'200px'}>
+        <Header
+          description="
+            You've been directed here to act on an RFP for Durham School Service.
+            3 out of 6 carriers have submitted bids.
+          " />
+      </SubContainer>
 
-      <BottomContainer>
-        <ActionButton text='register' />
-        What's in it for me?
-        <ActionButton text='sign in' />
-      </BottomContainer>
-    </TopContainer>
+      <SubContainer padding={'0 2% 0 20%'}>
+        <ActionButton text='REGISTER' action />
+      </SubContainer>
+
+      <SubContainer padding={'0 20% 0 2%'}>
+        <ActionButton text='SIGN IN' />
+      </SubContainer>
+
+      <SubContainer padding={'0 2% 0 20%'}>
+        <ActionButton text="What's in it for me?" asLink fontSize={18} />
+      </SubContainer>
+    </Container>
   }
 })
 

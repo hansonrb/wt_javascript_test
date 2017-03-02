@@ -1,18 +1,18 @@
 //@flow
 import styled from 'styled-components'
 
-export const TopContainer = styled.div`
+export const Container = styled.div`
   position: relative;
   margin-top: 5%;
   width: 100%;
-  height: 40%;
-  text-align: center;
-  font-weight: 800;
+  height: inherit;
 `
 
-export const BottomContainer = styled.div`
+export const SubContainer = styled.div`
   position: relative;
-  top: 45%;
-  width: 100%;
-  height: 60%;
+  width: ${props => props.width || '50%'};
+  height: ${props => props.height};
+  min-height: ${props => props.minHeight || '50px'};
+  display: inline-flex;
+  padding: ${props => props.padding || '0 0 0 0'};
 `
