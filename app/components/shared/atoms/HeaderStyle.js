@@ -10,7 +10,6 @@ export const Header = styled.div`
 `
 
 export const Main = styled.div`
-  margin-bottom: 1.5%;
   font-size: 3rem;
 `
 
