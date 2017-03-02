@@ -1,6 +1,6 @@
 //@flow
 import React, { PropTypes as pt } from 'react'
-import { Header } from '~/app/components/shared/atoms'
+import { Header, ToolTip, Texts as txt } from '~/app/components/shared/atoms'
 import { ActionButton } from '~/app/components/shared/molecules'
 import { Container, SubContainer } from './GreetingStyle'
 
@@ -25,11 +25,7 @@ const Greeting = React.createClass({
 
     return <Container>
       <SubContainer width={'100%'} minHeight={'200px'}>
-        <Header
-          description="
-            You've been directed here to act on an RFP for Durham School Service.
-            3 out of 6 carriers have submitted bids.
-          " />
+        <Header main={txt.greetingHeader()} description={txt.greetingDescription()} />
       </SubContainer>
 
       <SubContainer padding={'0 2% 0 20%'}>
@@ -42,6 +38,7 @@ const Greeting = React.createClass({
 
       <SubContainer padding={'0 2% 0 20%'}>
         <ActionButton text="What's in it for me?" asLink fontSize={18} />
+        <ToolTip text={txt.greetingToolTip()} />
       </SubContainer>
     </Container>
   }
