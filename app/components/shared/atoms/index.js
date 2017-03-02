@@ -1,2 +1,2 @@
 //@flow
-export GreetingHeader from './GreetingHeader'
+export Header from './Header'
