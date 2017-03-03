@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const ToolTipBox = styled.div`
   position: absolute;
   top: 90%;
-  min-width: 300px;
+  width: ${props => props.width};
   min-height: 50px;
   padding-bottom: 30px;
   background: #fff;

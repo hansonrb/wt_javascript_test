@@ -5,6 +5,7 @@ import { Button } from './ButtonStyle'
 const ActionButton = React.createClass({
   propTypes: {
     text: pt.string.isRequired,
+    clickAction: pt.func.isRequired,
     action: pt.bool,
     asLink: pt.bool,
     fontSize: pt.number,
@@ -21,13 +22,14 @@ const ActionButton = React.createClass({
   },
 
   render() {
-    const { action, asLink, fontSize, fontWeight, text } = this.props
+    const { action, asLink, fontSize, fontWeight, text, clickAction } = this.props
 
     return <Button
       action={action}
       asLink={asLink}
       fontSize={fontSize}
-      fontWeight={fontWeight} >
+      fontWeight={fontWeight}
+      onClick={clickAction}>
       { text }
     </Button>
   }

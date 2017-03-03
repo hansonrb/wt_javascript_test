@@ -4,13 +4,20 @@ import { ToolTipBox } from './ToolTipStyle'
 
 const ToolTip = React.createClass({
   propTypes: {
-    text: pt.string.isRequired
+    text: pt.string.isRequired,
+    width: pt.string
+  },
+
+  getDefaultProps() {
+    return {
+      width: '300px'
+    }
   },
 
   render() {
-    const { text } = this.props
+    const { width, text } = this.props
 
-    return <ToolTipBox>
+    return <ToolTipBox width={width}>
       { text }
     </ToolTipBox>
   }
