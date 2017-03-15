@@ -1,6 +1,7 @@
 //@flow
 import React, { PropTypes as pt } from 'react'
-import { Container, Header, Company } from './CompaniesStyle'
+import { Link } from 'react-router'
+import { Container, Header, Company, Toolbar, Button } from './CompaniesStyle'
 
 const Companies = React.createClass({
   propTypes: {
@@ -17,6 +18,9 @@ const Companies = React.createClass({
 
     return <Container>
       <Header>Companies</Header>
+      <Toolbar>
+        <Link to='/companies/new'><Button>Add Company</Button></Link>
+      </Toolbar>
       {companies.map(c =>
         <Company key={c.id}>{c.name}</Company>
       )}
