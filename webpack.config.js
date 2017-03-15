@@ -2,7 +2,7 @@ var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: ['babel-polyfill', 'whatwg-fetch', './app/Root', './app/notaviewer/notaviewer'],
+  entry: ['babel-polyfill', 'whatwg-fetch', './app/Root'],
   output: {
     path: path.join(__dirname, './dist'),
     publicPath: '/',
@@ -12,7 +12,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: [/node_modules/, /notaviewer/, /pdf\.worker/],
+        exclude: [/node_modules/],
         use: {
           loader: 'babel-loader',
           options: {

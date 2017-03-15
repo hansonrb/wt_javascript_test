@@ -1,2 +1,2 @@
 //@flow
-export * from './Document'
+export * from './Company'
