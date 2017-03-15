@@ -14,7 +14,7 @@ Implement `add new company` feature:
 - no tests for javascript, do controller tests in rails app
 
 Will be a plus if you:
-- **All implementation should be done with specific development approaches for organization data flow, code formatting, writing styles, components, containers, reducers, sagas. It's SUPER important for us to be sure that candidate can follow existing coding culture. **
+- All **implementation should be done with specific development approaches for organization data flow, code formatting, writing styles, components, containers, reducers, sagas. It's SUPER important for us to be sure that candidate can follow existing coding culture**. 
 - Implement form with redux-form
 - Add validation to prevent submitting empty or < 3 letters company name
 - Use material-ui library
